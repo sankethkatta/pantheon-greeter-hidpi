@@ -62,7 +62,8 @@ public class IndicatorMenuItem : Gtk.MenuItem {
 }
 
 public class Indicators : GtkClutter.Actor {
-    int margin_to_right = 5;
+    int margin_to_right = 20;
+    int margin_to_top = 20;
 
     PowerMenu power;
 
@@ -132,7 +133,7 @@ public class Indicators : GtkClutter.Actor {
         (get_widget () as Gtk.Container).add (bar);
 
         bar.pack_direction = Gtk.PackDirection.RTL;
-        height = 26;
+        height = 80;
         bar.show_all ();
 
         var transp = new Gtk.CssProvider ();
@@ -181,6 +182,7 @@ public class Indicators : GtkClutter.Actor {
             foreach (var entry in io.get_entries ()) {
                 var widget = new IndicatorMenuItem (entry);
                 bar.append (widget);
+                widget.margin_top = margin_to_top;
                 widget.margin_right = margin_to_right;
             }
 
@@ -191,15 +193,18 @@ public class Indicators : GtkClutter.Actor {
         //keyboard layout menu
         keyboard_menu = new KeyboardLayoutMenu ();
         bar.append (keyboard_menu);
+        keyboard_menu.margin_top = margin_to_top;
         keyboard_menu.margin_right = margin_to_right;
         keyboard_menu.show_all ();
 
         power = new PowerMenu ();
+        power.margin_top = margin_to_top;
         power.margin_right = margin_to_right;
         bar.insert (power, 0);
         power.show_all ();
 
         var accessibility = new AccessibilityMenu (settings);
+        accessibility.margin_top = margin_to_top;
         accessibility.margin_right = margin_to_right;
         bar.append (accessibility);
 

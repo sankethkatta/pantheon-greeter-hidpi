@@ -5,7 +5,7 @@ public class PowerMenu : Gtk.MenuItem {
     public PowerMenu () {
         try {
             add (new Gtk.Image.from_pixbuf (Gtk.IconTheme.get_default ().lookup_by_gicon (
-                                                  new GLib.ThemedIcon.with_default_fallbacks ("system-shutdown-symbolic"), 16, 0)
+                                                  new GLib.ThemedIcon.with_default_fallbacks ("system-shutdown-symbolic"), 48, 0)
                                                   .load_symbolic ({1,1,1,1})));
         } catch (Error e) {
             warning (e.message);
