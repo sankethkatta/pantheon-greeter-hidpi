@@ -33,7 +33,7 @@ public class SelectableAvatar : GtkClutter.Actor {
 
         if (user.logged_in) {
             var logged_in = new LoggedInIcon ();
-            logged_in.x = logged_in.y = 80;
+            logged_in.x = logged_in.y = 150;
             add_child (logged_in);
         }
     }
@@ -60,7 +60,7 @@ public class LoggedInIcon : GtkClutter.Texture {
     public LoggedInIcon () {
         if (image == null) {
             try {
-            image = Gtk.IconTheme.get_default ().load_icon ("account-logged-in", 16, 0);
+            image = Gtk.IconTheme.get_default ().load_icon ("account-logged-in", 48, 0);
             } catch (Error e) {
                 image = null;
                 warning (e.message);
