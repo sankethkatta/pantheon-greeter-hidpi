@@ -346,7 +346,7 @@ public static int main (string [] args) {
     settings.gtk_theme_name = "elementary";
     settings.gtk_icon_theme_name = "elementary";
     settings.gtk_font_name = "Droid Sans";
-    settings.gtk_xft_dpi= (int) (1024 * 200);
+    settings.gtk_xft_dpi= (int) (1024 * 300);
     settings.gtk_xft_antialias = 1;
     settings.gtk_xft_hintstyle = "hintslight";
     settings.gtk_xft_rgba = "rgb";
